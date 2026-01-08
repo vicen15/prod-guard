@@ -1,8 +1,0 @@
-com\prodguard\spring\SpringProdGuardContext.class
-com\prodguard\starter\ProdGuardBaseAutoConfiguration.class
-com\prodguard\starter\ProdGuardFreeAutoConfiguration.class
-com\prodguard\starter\SeverityResolver.class
-com\prodguard\starter\ProdGuardPremiumAutoConfiguration.class
-com\prodguard\starter\ProdGuardRunner.class
-com\prodguard\starter\SeverityResolver$1.class
-com\prodguard\starter\ProdGuardProperties.class

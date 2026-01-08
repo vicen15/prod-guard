@@ -1,5 +1,7 @@
 package com.prodguard.starter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
@@ -15,9 +17,14 @@ import com.prodguard.checks.free.StacktraceExposureCheck;
 import com.prodguard.checks.free.TimeoutDefaultsCheck;
 import com.prodguard.core.ProdCheck;
 
+import jakarta.annotation.PostConstruct;
+
 @AutoConfiguration
 public class ProdGuardFreeAutoConfiguration {
 
+	private static final Logger log =
+		    LoggerFactory.getLogger(ProdGuardFreeAutoConfiguration.class);
+	
     @Bean
     public ProdCheck debugLoggingCheck() { return new DebugLoggingCheck(); }
 
@@ -47,5 +54,10 @@ public class ProdGuardFreeAutoConfiguration {
 
     @Bean
     public ProdCheck timeoutDefaultsCheck() { return new TimeoutDefaultsCheck(); }
+ 
+    @PostConstruct
+    void premiumNoEnabled() {
+    	log.info("[prod-guard] Running FREE edition (limited checks)");
+    }
     
 }

@@ -4,3 +4,5 @@ prod-guard-checks/target
 *.classpath
 *.project
 prod-guard-core/target
+example-app/target
+prod-guard-starter/target

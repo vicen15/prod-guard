@@ -1,5 +1,7 @@
 package com.prodguard.starter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +18,8 @@ import com.prodguard.checks.premium.security.EffectiveSecurityHeadersCheck;
 import com.prodguard.checks.premium.security.EffectiveXFrameOptionsCheck;
 import com.prodguard.core.ProdCheck;
 
+import jakarta.annotation.PostConstruct;
+
 @AutoConfiguration
 @Import(ProdGuardFreeAutoConfiguration.class)
 @ConditionalOnProperty(
@@ -26,6 +30,8 @@ import com.prodguard.core.ProdCheck;
 )
 public class ProdGuardPremiumAutoConfiguration {
 
+	private static final Logger log = LoggerFactory.getLogger(ProdGuardPremiumAutoConfiguration.class);
+	
     @Bean ProdCheck effectiveHttpsCheck() { return new EffectiveHttpsCheck(); }
     @Bean ProdCheck effectiveHstsCheck() { return new EffectiveHstsCheck(); }
     @Bean ProdCheck effectiveCspCheck() { return new EffectiveCspCheck(); }
@@ -36,5 +42,10 @@ public class ProdGuardPremiumAutoConfiguration {
     @Bean ProdCheck effectivePermissionsPolicyCheck() { return new EffectivePermissionsPolicyCheck(); }
     @Bean ProdCheck effectiveCrossOriginOpenerPolicyCheck() {
         return new EffectiveCrossOriginOpenerPolicyCheck();
+    }
+    
+    @PostConstruct
+    void premiumEnabled() {
+        log.info("[prod-guard] Premium security checks enabled");
     }
 }
