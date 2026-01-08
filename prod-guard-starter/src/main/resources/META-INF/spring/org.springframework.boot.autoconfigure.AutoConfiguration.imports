@@ -1,0 +1,3 @@
+com.prodguard.starter.ProdGuardBaseAutoConfiguration
+com.prodguard.starter.ProdGuardFreeAutoConfiguration
+com.prodguard.starter.ProdGuardPremiumAutoConfiguration
