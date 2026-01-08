@@ -1,7 +1,0 @@
-com\prodguard\core\CheckDescriptor.class
-com\prodguard\core\Severity.class
-com\prodguard\core\CheckTier.class
-com\prodguard\core\ProdCheck.class
-com\prodguard\core\CheckResult.class
-com\prodguard\core\ProdGuardContext.class
-com\prodguard\core\EffectiveSeverity.class
