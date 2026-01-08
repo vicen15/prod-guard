@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.prodguard</groupId>
+    <artifactId>spring-boot-prod-guard</artifactId>
+    <version>0.2.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>prod-guard-checks</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.prodguard</groupId>
+      <artifactId>prod-guard-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+	<dependency>
+	  <groupId>org.junit.jupiter</groupId>
+	  <artifactId>junit-jupiter</artifactId>
+	  <version>5.10.2</version>
+	  <scope>test</scope>
+	</dependency>    
+	<dependency>
+	    <groupId>org.reflections</groupId>
+	    <artifactId>reflections</artifactId>
+	    <version>0.10.2</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.assertj</groupId>
+	    <artifactId>assertj-core</artifactId>
+	    <version>3.25.3</version>
+	    <scope>test</scope>
+	</dependency>		
+	
+  </dependencies>
+  
+</project>
